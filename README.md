@@ -692,7 +692,7 @@ TICKET:     ACTIVO    ──► USADO      ──► ANULADO
 
 ## 👨‍💻 Autor
 
-**Rodrigo Skio** — TECSUP  
+**WILMER JOSE MAQUERA AQUISE** — TECSUP  
 Proyecto: Arquitectura Limpia con Spring Boot  
 Semana 03 — Clean Architecture
 
