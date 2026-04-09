@@ -2,6 +2,8 @@ package com.ticket.electronico.domain.model.entity;
 
 
 
+import com.ticket.electronico.domain.model.valueobject.EstadoCheckIn;
+
 import java.util.Objects;
 import java.util.UUID;
 
@@ -12,7 +14,7 @@ public class DetalleReserva {
     private UUID pasajeroId;
     private UUID vueloId;
     private UUID asientoId;
-    private String estadoCheckin;
+    private EstadoCheckIn estadoCheckin;
 
     public DetalleReserva() {}
 
@@ -31,8 +33,8 @@ public class DetalleReserva {
     public UUID getAsientoId() { return asientoId; }
     public void setAsientoId(UUID asientoId) { this.asientoId = asientoId; }
 
-    public String getEstadoCheckin() { return estadoCheckin; }
-    public void setEstadoCheckin(String estadoCheckin) { this.estadoCheckin = estadoCheckin; }
+    public EstadoCheckIn getEstadoCheckin() { return estadoCheckin; }
+    public void setEstadoCheckin(EstadoCheckIn estadoCheckin) { this.estadoCheckin = estadoCheckin; }
 
     @Override
     public boolean equals(Object o) {

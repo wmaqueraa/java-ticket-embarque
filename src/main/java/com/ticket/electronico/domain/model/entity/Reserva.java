@@ -1,5 +1,7 @@
 package com.ticket.electronico.domain.model.entity;
 
+import com.ticket.electronico.domain.model.valueobject.EstadoReserva;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
@@ -9,7 +11,8 @@ public class Reserva {
     private UUID id;
     private String codigoReserva;
     private LocalDateTime fechaReserva;
-    private String estado;
+    private EstadoReserva estado;
+    private int correlativo;
 
     public Reserva() {}
 
@@ -22,8 +25,11 @@ public class Reserva {
     public LocalDateTime getFechaReserva() { return fechaReserva; }
     public void setFechaReserva(LocalDateTime fechaReserva) { this.fechaReserva = fechaReserva; }
 
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    public EstadoReserva getEstado() { return estado; }
+    public void setEstado(EstadoReserva estado) { this.estado = estado; }
+
+    public int getCorrelativo(){return this.correlativo; }
+    public void setCorrelativo(int correlativo ) { this.correlativo = correlativo;}
 
     @Override
     public boolean equals(Object o) {

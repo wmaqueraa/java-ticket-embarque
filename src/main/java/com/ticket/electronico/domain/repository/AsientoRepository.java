@@ -2,7 +2,7 @@ package com.ticket.electronico.domain.repository;
 
 
 import com.ticket.electronico.domain.model.entity.Asiento;
-import com.ticket.electronico.domain.model.valueobjects.NumeroAsiento;
+import com.ticket.electronico.domain.model.valueobject.NumeroAsiento;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,4 +19,6 @@ public interface AsientoRepository {
     Optional<Asiento> findByAvionIdAndNumeroAsiento(UUID avionId, NumeroAsiento numeroAsiento);
 
     void deleteById(UUID id);
+
+    List<Asiento> findAll();
 }

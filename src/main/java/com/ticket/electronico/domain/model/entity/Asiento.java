@@ -1,6 +1,9 @@
+// domain/model/entity/Asiento.java
 package com.ticket.electronico.domain.model.entity;
 
-import com.ticket.electronico.domain.model.valueobjects.NumeroAsiento;
+import com.ticket.electronico.domain.model.valueobject.ClaseAsiento;
+import com.ticket.electronico.domain.model.valueobject.NumeroAsiento;
+import com.ticket.electronico.domain.model.valueobject.TipoAsiento;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -10,7 +13,9 @@ public class Asiento {
     private UUID id;
     private UUID avionId;
     private NumeroAsiento numeroAsiento;
-    private String clase;
+    private ClaseAsiento clase;
+    private TipoAsiento tipoAsiento;
+    private boolean isOcupado;
 
     public Asiento() {}
 
@@ -23,8 +28,14 @@ public class Asiento {
     public NumeroAsiento getNumeroAsiento() { return numeroAsiento; }
     public void setNumeroAsiento(NumeroAsiento numeroAsiento) { this.numeroAsiento = numeroAsiento; }
 
-    public String getClase() { return clase; }
-    public void setClase(String clase) { this.clase = clase; }
+    public ClaseAsiento getClase() { return clase; }
+    public void setClase(ClaseAsiento clase) { this.clase = clase; }
+
+    public TipoAsiento getTipoAsiento() { return tipoAsiento; }
+    public void setTipoAsiento(TipoAsiento tipoAsiento) { this.tipoAsiento = tipoAsiento; }
+
+    public boolean getIsOcupado() { return isOcupado; }
+    public void setIsOcupado(boolean isOcupado) { this.isOcupado = isOcupado; }
 
     @Override
     public boolean equals(Object o) {

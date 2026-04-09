@@ -2,8 +2,9 @@ package com.ticket.electronico.domain.repository;
 
 
 import com.ticket.electronico.domain.model.entity.Aerolinea;
-import com.ticket.electronico.domain.model.valueobjects.CodigoIata;
+import com.ticket.electronico.domain.model.valueobject.CodigoIata;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -15,5 +16,8 @@ public interface AerolineaRepository {
 
     Optional<Aerolinea> findByCodigoIata(CodigoIata codigoIata);
 
-    Optional<Object> findByCodigoIata(String codigoIata);
+    List<Aerolinea> findAll();
+
+    String getCodigoAerolinea(UUID id);
+
 }

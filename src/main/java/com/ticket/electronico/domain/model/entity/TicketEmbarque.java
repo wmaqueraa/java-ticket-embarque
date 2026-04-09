@@ -2,6 +2,8 @@ package com.ticket.electronico.domain.model.entity;
 
 
 
+import com.ticket.electronico.domain.model.valueobject.EstadoTicket;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
@@ -13,8 +15,8 @@ public class TicketEmbarque {
     private String puertaEmbarque;
     private String grupoEmbarque;
     private LocalDateTime horaEmbarque;
-    private String estado;
-
+    private EstadoTicket estado;
+    private UUID vueloId;
     public TicketEmbarque() {
     }
 
@@ -65,22 +67,26 @@ public class TicketEmbarque {
         this.horaEmbarque = horaEmbarque;
     }
 
-    public String getEstado() {
+    public EstadoTicket getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(EstadoTicket estado) {
         this.estado = estado;
     }
 
+    public UUID getVueloId() {return this.vueloId; }
+    public void setVueloId(UUID id) {this.vueloId = id; }
+
     // MÉTODOS DE NEGOCIO
 
-    public void cambiarEstado(String estado) {
+    public void cambiarEstado(EstadoTicket estado) {
         this.estado = estado;
     }
 
     public boolean estaActivo() {
-        return "ACTIVO".equalsIgnoreCase(this.estado);
+
+        return this.estado == EstadoTicket.ACTIVO;
     }
 
     // EQUALS Y HASHCODE (basado en ID)

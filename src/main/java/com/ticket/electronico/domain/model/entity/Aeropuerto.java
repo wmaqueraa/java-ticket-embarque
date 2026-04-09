@@ -1,20 +1,22 @@
 package com.ticket.electronico.domain.model.entity;
 
 
+import com.ticket.electronico.domain.model.valueobject.CodigoIata;
+
 import java.util.Objects;
 import java.util.UUID;
 
 public class Aeropuerto {
 
     private UUID id;
-    private String codigoIata;
+    private CodigoIata codigoIata;
     private String nombre;
     private String ciudad;
     private String pais;
-
+    private int totalEmbarques;
     public Aeropuerto() {}
 
-    public Aeropuerto(UUID id, String codigoIata, String nombre) {
+    public Aeropuerto(UUID id, CodigoIata codigoIata, String nombre) {
         this.id = id;
         this.codigoIata = codigoIata;
         this.nombre = nombre;
@@ -30,11 +32,11 @@ public class Aeropuerto {
         this.id = id;
     }
 
-    public String getCodigoIata() {
+    public CodigoIata getCodigoIata() {
         return codigoIata;
     }
 
-    public void setCodigoIata(String codigoIata) {
+    public void setCodigoIata(CodigoIata codigoIata) {
         this.codigoIata = codigoIata;
     }
 
@@ -62,11 +64,16 @@ public class Aeropuerto {
         this.pais = pais;
     }
 
+    public int getTotalEmbarques(){ return this.totalEmbarques; }
+    public void setTotalEmbarques(int total ) {  this.totalEmbarques = total; }
+
     // MÉTODOS DE NEGOCIO
 
     public String getDescripcion() {
         return nombre + " (" + codigoIata + ")";
     }
+
+
 
     // EQUALS Y HASHCODE
 

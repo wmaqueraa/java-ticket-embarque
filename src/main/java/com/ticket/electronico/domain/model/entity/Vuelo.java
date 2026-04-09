@@ -2,8 +2,11 @@ package com.ticket.electronico.domain.model.entity;
 
 
 
+import com.ticket.electronico.domain.model.valueobject.EstadoVuelo;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Random;
 import java.util.UUID;
 
 public class Vuelo {
@@ -16,7 +19,10 @@ public class Vuelo {
     private LocalDateTime fechaSalida;
     private LocalDateTime fechaLlegada;
     private UUID avionId;
-    private String estado;
+    private EstadoVuelo estado;
+    private int numeroFilas;
+    private boolean esInternacional;
+    private String puertaEmbarque;
 
     public Vuelo() {}
 
@@ -44,8 +50,17 @@ public class Vuelo {
     public UUID getAvionId() { return avionId; }
     public void setAvionId(UUID avionId) { this.avionId = avionId; }
 
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    public EstadoVuelo getEstado() { return estado; }
+    public void setEstado(EstadoVuelo estado) { this.estado = estado; }
+
+    public int getNumeroFilas() { return this.numeroFilas;}
+    public void setNumeroFilas(int numeroFilas) { this.numeroFilas = numeroFilas; }
+
+    public boolean getEsInternacional(){return this.esInternacional; }
+    public void setEsinternacional( boolean internacional ) { this.esInternacional = internacional; }
+
+    public String getPuertaEmbarque(){ return this.puertaEmbarque;}
+    public void setPuertaEmbarque( String puerta ) { this.puertaEmbarque = puerta; }
 
     @Override
     public boolean equals(Object o) {
@@ -59,4 +74,8 @@ public class Vuelo {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
+
+
 }

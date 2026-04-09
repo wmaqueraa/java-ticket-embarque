@@ -1,6 +1,8 @@
 package com.ticket.electronico.domain.model.entity;
 
 
+import com.ticket.electronico.domain.model.valueobject.CodigoIata;
+
 import java.util.Objects;
 import java.util.UUID;
 
@@ -8,7 +10,7 @@ public class Aerolinea {
 
     private UUID id;
     private String nombre;
-    private String codigoIata;
+    private CodigoIata codigoIata;
     private String paisOrigen;
 
     public Aerolinea() {}
@@ -24,8 +26,8 @@ public class Aerolinea {
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public String getCodigoIata() { return codigoIata; }
-    public void setCodigoIata(String codigoIata) { this.codigoIata = codigoIata; }
+    public CodigoIata getCodigoIata() { return codigoIata; }
+    public void setCodigoIata(CodigoIata codigoIata) { this.codigoIata = codigoIata; }
 
     public String getPaisOrigen() { return paisOrigen; }
     public void setPaisOrigen(String paisOrigen) { this.paisOrigen = paisOrigen; }
