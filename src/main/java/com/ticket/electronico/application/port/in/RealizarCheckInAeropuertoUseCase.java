@@ -1,10 +1,10 @@
+// application/port/in/RealizarCheckInAeropuertoUseCase.java
 package com.ticket.electronico.application.port.in;
-/*
-*
-Imprime tu tarjeta de embarque
-Atención personalizada
-Útil si tienes dudas o problemas
-Entregas equipaje ahí mismo
-* */
-public class RealizarCheckInAeropuertoUseCase {
+
+import com.ticket.electronico.application.dto.command.CheckInAeropuertoCommand;
+import com.ticket.electronico.application.dto.response.TicketEmbarqueResponse;
+import java.util.List;
+
+public interface RealizarCheckInAeropuertoUseCase {
+    List<TicketEmbarqueResponse> realizarCheckIn(CheckInAeropuertoCommand command);
 }

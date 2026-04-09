@@ -4,7 +4,6 @@ package com.ticket.electronico.infrastructure.adapter.in.web;
 import com.ticket.electronico.application.dto.command.ConfirmarReservaCommand;
 import com.ticket.electronico.application.dto.response.TicketEmbarqueResponse;
 import com.ticket.electronico.application.port.in.RealizarCheckInOnlineUseCase;
-import com.ticket.electronico.domain.model.entity.TicketEmbarque;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,14 +16,14 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/ticketembarque")
+@RequestMapping("/api/v1/checkin/online")
 @Tag(name = "TicketEmbarque", description = "Gestión de Ticket de Embarque Vuelo en Aerolinea")
 @CrossOrigin(origins = "*")
-public class TicketEmbarqueController {
+public class CheckInOnlineController {
 
     private final RealizarCheckInOnlineUseCase realizarCheckInOnlineUseCase;
 
-    public TicketEmbarqueController(RealizarCheckInOnlineUseCase realizarCheckInOnlineUseCase) {
+    public CheckInOnlineController(RealizarCheckInOnlineUseCase realizarCheckInOnlineUseCase) {
         this.realizarCheckInOnlineUseCase = realizarCheckInOnlineUseCase;
     }
 

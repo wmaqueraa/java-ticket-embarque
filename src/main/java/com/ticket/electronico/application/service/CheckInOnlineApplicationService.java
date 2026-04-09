@@ -5,22 +5,14 @@ import com.ticket.electronico.application.dto.response.TicketEmbarqueResponse;
 import com.ticket.electronico.application.port.in.RealizarCheckInOnlineUseCase;
 import com.ticket.electronico.domain.exception.ReservaNoEncontradaException;
 import com.ticket.electronico.domain.model.entity.*;
-import com.ticket.electronico.domain.model.valueobject.EstadoBoleto;
-import com.ticket.electronico.domain.model.valueobject.EstadoCheckIn;
-import com.ticket.electronico.domain.model.valueobject.EstadoTicket;
-import com.ticket.electronico.domain.model.valueobject.TipoEquipaje;
 import com.ticket.electronico.domain.repository.*;
 import com.ticket.electronico.domain.service.AsientoService;
 import com.ticket.electronico.domain.service.VueloService;
 import com.ticket.electronico.shared.annotation.UseCase;
-import com.ticket.electronico.shared.util.QRGenerator;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 /*
  * El check-in es el registro obligatorio para confirmar
@@ -30,7 +22,7 @@ import java.util.Locale;
  */
 @UseCase
 @Transactional
-public class TicketEmbarqueApplicationService implements RealizarCheckInOnlineUseCase {
+public class CheckInOnlineApplicationService implements RealizarCheckInOnlineUseCase {
 
     private final BoletoRepository boletoRepository;
     private final ReservaRepository reservaRepository;
@@ -42,14 +34,14 @@ public class TicketEmbarqueApplicationService implements RealizarCheckInOnlineUs
     private final TicketEmbarqueRepository ticketEmbarqueRepository;
 
     // ✅ Bug 5 corregido: eliminado parámetro DetalleReserva que no se asignaba
-    public TicketEmbarqueApplicationService(BoletoRepository boletoRepository,
-                                            ReservaRepository reservaRepository,
-                                            AsientoService asientoService,
-                                            PasajeroRepository pasajeroRepository,
-                                            VueloRepository vueloRepository,
-                                            VueloService vueloService,
-                                            DetalleReservaRepository detalleReservaRepository,
-                                            TicketEmbarqueRepository ticketEmbarqueRepository) {
+    public CheckInOnlineApplicationService(BoletoRepository boletoRepository,
+                                           ReservaRepository reservaRepository,
+                                           AsientoService asientoService,
+                                           PasajeroRepository pasajeroRepository,
+                                           VueloRepository vueloRepository,
+                                           VueloService vueloService,
+                                           DetalleReservaRepository detalleReservaRepository,
+                                           TicketEmbarqueRepository ticketEmbarqueRepository) {
         this.boletoRepository = boletoRepository;
         this.reservaRepository = reservaRepository;
         this.asientoService = asientoService;
