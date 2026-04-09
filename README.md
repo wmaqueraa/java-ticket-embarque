@@ -3,7 +3,7 @@
 ## Descripción General
 
 El sistema de **Ticket de Embarque Electrónico** es una solución para aerolíneas que permite gestionar el proceso de check-in y emisión de tarjetas de embarque a través de tres canales: **online**, **en aeropuerto** y **en kiosco**. El sistema garantiza la asignación de asientos, generación de códigos QR y entrega digital o física del ticket.
-
+![Ticket de Embarque Online](docs/ticket-embarque.png)
 ---
 
 ## 📦 Modelo de Dominio — Clases Principales
